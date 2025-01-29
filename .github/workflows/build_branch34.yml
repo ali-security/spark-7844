@@ -20,8 +20,6 @@
 name: "Build (branch-3.4, Scala 2.13, Hadoop 3, JDK 8)"
 
 on:
-  schedule:
-    - cron: '0 9 * * *'
 
 jobs:
   run-build:

@@ -54,7 +54,7 @@ on:
 jobs:
   matrix-gen:
     name: Generate matrix for job splits
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     env:
@@ -124,7 +124,7 @@ jobs:
     name: "Run benchmarks: ${{ inputs.class }} (JDK ${{ inputs.jdk }}, Scala ${{ inputs.scala }}, ${{ matrix.split }} out of ${{ inputs.num-splits }} splits)"
     if: always()
     needs: [matrix-gen, tpcds-1g-gen]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:

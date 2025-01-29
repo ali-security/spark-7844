@@ -19,8 +19,6 @@
 name: "Build / SparkR-only (master, 4.4.1, windows-2022)"
 
 on:
-  schedule:
-    - cron: '0 17 * * *'
 
 jobs:
   build:
@@ -64,7 +62,7 @@ jobs:
     # includes Python 3.7, which Spark does not support. Therefore, we simply install the proper Python
     # for simplicity, see SPARK-47116.
     - name: Install Python 3.11
-      uses: actions/setup-python@v5
+      uses: MatteoH2O1999/setup-python@v4
       with:
         python-version: '3.11'
         architecture: x64
